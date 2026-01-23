@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<!-- Autore: Gabriele Levati -->
+
+<BorderPane fx:id="rootPane"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.simpleinvest.ricerca.RicercaAssetController"
+            stylesheets="@/styles/main.css">
+
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <center>
+        <VBox spacing="20" styleClass="main-container">
+
+            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="header-bar">
+                <Label text="Ricerca &amp; Advisor" styleClass="page-title"/>
+                
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button text="🔄 Reset Tutto" onAction="#handleReset" />
+
+                <HBox spacing="8" alignment="CENTER_RIGHT">
+                    <Label text="👤" styleClass="user-icon"/>
+                    <Label fx:id="usernameLabel"
+                           styleClass="username-label"/>
+                </HBox>
+            </HBox>
+
+            <TabPane tabClosingPolicy="UNAVAILABLE" prefHeight="200">
+                
+                <Tab text="🔍 Ricerca Veloce">
+                    <VBox style="-fx-padding: 15 0 0 0;">
+                        <VBox spacing="15" styleClass="card">
+                            <Label text="Cerca per Nome o ISIN" styleClass="card-title"/>
+                            <HBox spacing="10">
+                                <TextField fx:id="searchField" promptText="Es. Apple, IT0005..." HBox.hgrow="ALWAYS"/>
+                                <Button text="Cerca" onAction="#handleRicerca" styleClass="primary-button"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </Tab>
+
+                <Tab text="⚙️ Filtri Avanzati">
+                    <VBox style="-fx-padding: 15 0 0 0;">
+                        <VBox spacing="15" styleClass="card">
+                            <Label text="Filtra il database" styleClass="card-title"/>
+                            <HBox spacing="15" alignment="CENTER_LEFT">
+                                <VBox spacing="5">
+                                    <Label text="Tipo Asset" styleClass="subtitle"/>
+                                    <ComboBox fx:id="tipoCombo" prefWidth="140.0" />
+                                </VBox>
+                                
+                                <VBox spacing="5">
+                                    <Label text="Settore" styleClass="subtitle"/>
+                                    <ComboBox fx:id="settoreCombo" prefWidth="140.0" />
+                                </VBox>
+
+                                <VBox spacing="5">
+                                    <Label text="Durata (Anni)" styleClass="subtitle"/>
+                                    <HBox spacing="5" alignment="CENTER_LEFT">
+                                        <TextField fx:id="durataMinField" promptText="Min" prefWidth="60.0" />
+                                        <Label text="-"/>
+                                        <TextField fx:id="durataMaxField" promptText="Max" prefWidth="60.0" />
+                                    </HBox>
+                                </VBox>
+
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Button text="Applica Filtri" onAction="#handleRicercaFiltri" styleClass="primary-button"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </Tab>
+
+                <Tab text="🤖 Robo-Advisor">
+                    <VBox style="-fx-padding: 15 0 0 0;">
+                        <VBox spacing="15" styleClass="card">
+                            <Label text="Lasciati consigliare" styleClass="card-title"/>
+                            <HBox spacing="20" alignment="CENTER_LEFT">
+                                <VBox spacing="5">
+                                    <Label text="Quanto vuoi rischiare?" styleClass="subtitle"/>
+                                    <ComboBox fx:id="rischioCombo" prefWidth="180.0" />
+                                </VBox>
+
+                                <VBox spacing="5">
+                                    <Label text="Orizzonte temporale" styleClass="subtitle"/>
+                                    <HBox spacing="5" alignment="CENTER_LEFT">
+                                        <TextField fx:id="orizzonteField" promptText="Es. 5" prefWidth="80.0" />
+                                        <Label text="anni"/>
+                                    </HBox>
+                                </VBox>
+
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Button text="Chiedi Consiglio" onAction="#handleAdvisor" styleClass="primary-button"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </Tab>
+
+            </TabPane>
+
+
+            <TableView fx:id="assetTable" VBox.vgrow="ALWAYS">
+
+                <columns>
+                    <TableColumn text="Nome" fx:id="nomeCol"/>
+                    <TableColumn text="Tipo" fx:id="tipoCol"/>
+                    <TableColumn text="Settore" fx:id="settoreCol"/>
+                    <TableColumn text="Durata (anni)" fx:id="durataCol"/>
+                    <TableColumn text="isin" fx:id="isinCol"/>
+                </columns>
+
+            </TableView>
+
+
+        </VBox>
+    </center>
+
+</BorderPane>

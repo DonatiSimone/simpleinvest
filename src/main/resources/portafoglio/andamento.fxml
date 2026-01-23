@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Autore: Donati Simone -->
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="it.simpleinvest.portafoglio.AndamentoController"
+            style="-fx-padding: 15;"
+            stylesheets="@/styles/main.css">
+
+    <!-- TITOLO -->
+    <top>
+        <VBox spacing="5">
+            <Label fx:id="titoloLabel"
+                   style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+            <Separator/>
+        </VBox>
+    </top>
+
+    <!-- GRAFICO -->
+    <center>
+        <LineChart fx:id="lineChart"
+                   animated="false"
+                   legendVisible="false">
+
+            <xAxis>
+                <NumberAxis label="Tempo"/>
+            </xAxis>
+
+            <yAxis>
+                <NumberAxis label="Valore (€)"/>
+            </yAxis>
+
+        </LineChart>
+    </center>
+
+    <!-- RIEPILOGO -->
+    <bottom>
+        <HBox spacing="30"
+              alignment="CENTER"
+              style="-fx-padding: 10;">
+
+            <Label fx:id="inizialeLabel"/>
+            <Label fx:id="attualeLabel"/>
+            <Label fx:id="percentualeLabel"/>
+
+        </HBox>
+    </bottom>
+
+</BorderPane>

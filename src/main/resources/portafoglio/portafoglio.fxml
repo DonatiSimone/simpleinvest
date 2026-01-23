@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<!-- Autore: Donati Simone -->
+
+<BorderPane fx:id="rootPane"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.simpleinvest.portafoglio.PortafoglioController"
+            stylesheets="@/styles/main.css">
+
+    <!-- Padding globale -->
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <center>
+        <VBox spacing="25"
+              VBox.vgrow="ALWAYS"
+              styleClass="main-container">
+
+            <!-- HEADER -->
+            <HBox alignment="CENTER_LEFT"
+                  spacing="15"
+                  styleClass="header-bar">
+
+                <Label text="Gestione Portafogli"
+                       styleClass="page-title"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <HBox spacing="8" alignment="CENTER_RIGHT">
+                    <Label text="👤" styleClass="user-icon"/>
+                    <Label fx:id="usernameLabel"
+                           styleClass="username-label"/>
+                </HBox>
+            </HBox>
+
+            <!-- CONTENUTO PRINCIPALE -->
+            <HBox spacing="30"
+                  HBox.hgrow="ALWAYS"
+                  VBox.vgrow="ALWAYS">
+
+                <!-- LISTA PORTAFOGLI -->
+                <VBox spacing="12"
+                      VBox.vgrow="ALWAYS"
+                      HBox.hgrow="ALWAYS"
+                      styleClass="card">
+
+                    <Label text="📁 I tuoi portafogli"
+                           styleClass="card-title"/>
+
+                    <ListView fx:id="portafogliListView"
+                              VBox.vgrow="ALWAYS"/>
+                </VBox>
+
+                <!-- COLONNA DESTRA -->
+                <VBox spacing="20"
+                      prefWidth="360"
+                      VBox.vgrow="ALWAYS">
+
+                    <!-- CREAZIONE -->
+                    <VBox spacing="12"
+                          styleClass="card">
+
+                        <Label text="➕ Nuovo portafoglio"
+                               styleClass="card-title"/>
+
+                        <TextField fx:id="nomeField"
+                                   promptText="Nome portafoglio"/>
+
+                        <TextField fx:id="capitaleField"
+                                   promptText="Capitale iniziale (€)"/>
+
+                        <Button text="Crea portafoglio"
+                                onAction="#handleCreaPortafoglio"
+                                maxWidth="Infinity"
+                                styleClass="primary-button"/>
+                    </VBox>
+
+                    <!-- AZIONI -->
+                    <VBox spacing="10"
+                          styleClass="card">
+
+                        <Label text="⚙️ Azioni"
+                               styleClass="card-title"/>
+
+                        <Button text="✏️ Rinomina"
+                                maxWidth="Infinity"
+                                onAction="#handleRinominaPortafoglio"/>
+
+                        <Button text="🗑️ Elimina"
+                                maxWidth="Infinity"
+                                onAction="#handleEliminaPortafoglio"
+                                styleClass="danger-button"/>
+
+                        <Button text="📊 Analisi andamento"
+                                maxWidth="Infinity"
+                                onAction="#handleAnalisiAndamento"/>
+                    </VBox>
+
+                </VBox>
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<!-- Autore: Condiviso -->
+
+<BorderPane fx:id="rootPane"
+            fx:controller="it.simpleinvest.layout.MainLayoutController"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="@/styles/main.css">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <left>
+        <VBox spacing="25"
+              prefWidth="220"
+              styleClass="sidebar">
+
+            <Label text="💼 SimpleInvest"
+                   styleClass="sidebar-title"/>
+
+            <VBox spacing="12">
+            <ToggleButton fx:id="btnPortafogli"
+                          text="Portafogli"
+                          toggleGroup="$navGroup"
+                          onAction="#vaiPortafogli"/>
+            <ToggleButton fx:id="btnRicerca"
+                          text="Ricerca Asset"
+                          toggleGroup="$navGroup"
+                          onAction="#vaiRicerca"/>
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Label text="© SimpleInvest 2026"
+                   styleClass="sidebar-footer"/>
+        </VBox>
+    </left>
+</BorderPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="simpleinvest.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="3269"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="asset" custom_title="0" dock_id="1" table="4,5:mainasset"/><dock_state state="000000ff00000000fd00000001000000020000024900000213fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000002490000012300ffffff000002490000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="asset" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="29"/><column index="2" value="218"/><column index="3" value="101"/><column index="4" value="93"/><column index="5" value="45"/><column index="6" value="62"/><column index="7" value="101"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">-- === AZIONI (Rischio Alto / Durata NULL) ===
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Apple Inc.', 'AZIONE', 'Tecnologia', NULL, 0, 'US0378331005');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Microsoft Corp', 'AZIONE', 'Tecnologia', NULL, 0, 'US5949181045');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('NVIDIA Corp', 'AZIONE', 'Tecnologia', NULL, 0, 'US67066G1040');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Tesla Motors', 'AZIONE', 'Tecnologia', NULL, 0, 'US88160R1014');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Intesa Sanpaolo', 'AZIONE', 'Finanza', NULL, 0, 'IT0000072618');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('UniCredit', 'AZIONE', 'Finanza', NULL, 0, 'IT0004781412');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Pfizer Inc', 'AZIONE', 'Sanità', NULL, 0, 'US7170811035');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Moderna', 'AZIONE', 'Sanità', NULL, 0, 'US60770K1079');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Ferrari NV', 'AZIONE', 'Privato', NULL, 0, 'NL0011585146');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Enel SpA', 'AZIONE', 'Privato', NULL, 0, 'IT0003128367');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Amazon.com', 'AZIONE', 'Tecnologia', NULL, 0, 'US0231351067');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('JPMorgan Chase', 'AZIONE', 'Finanza', NULL, 0, 'US46625H1005');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Johnson &amp; Johnson', 'AZIONE', 'Sanità', NULL, 0, 'US4781601046');
+
+-- === OBBLIGAZIONI GOVERNATIVE (Rischio Basso / Durata Definita) ===
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('BTP Italia 2025', 'OBBLIGAZIONE', 'Governativo', 1, 0, 'IT0005410001');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('BTP Futura 2026', 'OBBLIGAZIONE', 'Governativo', 2, 0, 'IT0005420002');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Bund Germania 2027', 'OBBLIGAZIONE', 'Governativo', 3, 0, 'DE0001102301');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('US Treasury 5Y', 'OBBLIGAZIONE', 'Governativo', 5, 0, 'US912828Z948');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('BTP Lungo Termine 2034', 'OBBLIGAZIONE', 'Governativo', 10, 0, 'IT0005430003');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('OAT Francia 2030', 'OBBLIGAZIONE', 'Governativo', 6, 0, 'FR0011317783');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('BTP Green 2045', 'OBBLIGAZIONE', 'Governativo', 21, 0, 'IT0005440004');
+
+-- === OBBLIGAZIONI CORPORATE (Rischio Medio-Basso / Durata Definita) ===
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Eni Bond 2026', 'OBBLIGAZIONE', 'Privato', 2, 0, 'XS1234567890');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Apple Bond 2028', 'OBBLIGAZIONE', 'Tecnologia', 4, 0, 'US037833AF82');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Goldman Sachs Bond', 'OBBLIGAZIONE', 'Finanza', 5, 0, 'US38141GVM31');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Coca Cola Bond 2030', 'OBBLIGAZIONE', 'Privato', 6, 0, 'US191216AZ43');
+
+-- === ETF (Rischio Medio / Durata NULL) ===
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('iShares Core S&amp;P 500', 'ETF', 'Tutti', NULL, 0, 'IE00B5BMR087');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Vanguard All-World', 'ETF', 'Tutti', NULL, 0, 'IE00B3RBWM25');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Invesco Solar Energy', 'ETF', 'Tecnologia', NULL, 0, 'US46138G7060');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('iShares Global Clean Energy', 'ETF', 'Privato', NULL, 0, 'IE00B1XNHC34');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Lyxor Robotics &amp; AI', 'ETF', 'Tecnologia', NULL, 0, 'LU1838002480');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Xtrackers Health Care', 'ETF', 'Sanità', NULL, 0, 'IE00BM67HK77');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('WisdomTree Cloud Computing', 'ETF', 'Tecnologia', NULL, 0, 'IE00BJGWDN33');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Vanguard Bond Global', 'ETF', 'Governativo', NULL, 0, 'IE00B18GC888');
+
+-- === ASSET &quot;STORICI&quot; (Per testare che non appaiano nella ricerca normale se filtri) ===
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Parmalat 2003 (Delisted)', 'AZIONE', 'Privato', NULL, 1, 'IT000000000X');
+INSERT INTO asset (nome, tipo, settore, durata, is_storico, isin) VALUES ('Lehman Brothers Bond', 'OBBLIGAZIONE', 'Finanza', 0, 1, 'US5249081002');</sql><current_tab id="0"/></tab_sql></sqlb_project>
