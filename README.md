@@ -75,7 +75,7 @@ Project documentation is available inside the `/docs` folder:
 Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/DonatiSimone/simpleinvest.git
 ```
 
 Make sure you have installed:
