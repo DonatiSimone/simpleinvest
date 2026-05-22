@@ -63,10 +63,10 @@ The system also includes:
 
 Project documentation is available inside the `/docs` folder:
 
-- [Vision Document](docs/1_Visione/Documento%20di%20Visione%20Simpleinvest.pdf)
-- [Requirements Specification](docs/2_Requisiti/Documento%20dei%20Requisiti%20Simpleinvest.pdf)
-- [Design Document](docs/3_Progettazione/Documento%20di%20Progettazione%20Simpleinvest.pdf)
-- [Implementation Document](docs/4_Implementazione/Documento%20di%20Implementazione%20Simpleinvest.pdf)
+- [Vision Document](docs/1_Visione/vision-document.pdf)
+- [Requirements Specification](docs/2_Requisiti/requirements-specification.pdf)
+- [Design Document](docs/3_Progettazione/design-document.pdf)
+- [Implementation Document](docs/4_Implementazione/implementation-document.pdf)
 
 ---
 
