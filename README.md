@@ -1,10 +1,6 @@
 Autori:<br>
-Simone Donati - 20043972<br>
-Gabriele Levati - 20056691<br>
-
-
-Data dell'esame prevista:<br>
-03/02/2026<br>
+Simone Donati
+Gabriele Levati
 
 
 Nome del progetto:<br>
